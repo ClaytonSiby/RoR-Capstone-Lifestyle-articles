@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="">Sign In</h1>
+
+  <%= form_tag sessions_path do %>
+
+    <div class="form-group">
+      <%= label_tag :name %>
+      <%= text_field_tag :name, params[:name], class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= email_field_tag :email, params[:email], class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, params[:password], class: 'form-control'%>
+    </div>
+
+    <div class="button">
+      <%= submit_tag 'Sign In'%>
+    </div>
+  <% end %>
+</div>
