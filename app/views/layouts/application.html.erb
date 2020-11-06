@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LifestyleArticles</title>
+    <title><%= yield(:title) %> | LSA </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,11 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
-
-    <% flash.each do |name, message| %>
-      <div class="<%= name %> text-center bg-light"><%= message %></div>
-    <% end %>
-
+    <div class="notifications">
+      <% if notice.present? %>
+        <div class="notice">
+          <p><%= notice %></p>
+        </div>
+      <% elsif alert.present? %>
+        <div class="alert">
+          <p><%= alert %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>

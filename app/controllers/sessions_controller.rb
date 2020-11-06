@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       flash[:notice] = 'You have logged in successfully!'
       redirect_to @user
     else
-      flash[:alert] = 'Name or email is invalid'
-      render :new
+      flash[:alert] = 'Name not recognised!'
+      redirect_to root_path
     end
   end
 
