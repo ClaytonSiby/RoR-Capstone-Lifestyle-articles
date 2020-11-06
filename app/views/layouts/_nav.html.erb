@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <%= link_to 'LS', '#', class: 'navbar-brand'%>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsenav">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+            <%= link_to 'Create Article', new_article_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Sign Out', sign_out_path, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+            <%= link_to 'Sign In', new_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Sign Up', sign_up_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
