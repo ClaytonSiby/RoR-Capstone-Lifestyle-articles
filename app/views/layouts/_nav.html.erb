@@ -17,6 +17,9 @@
         <li class="nav-item">
             <%= link_to 'Sign Out', sign_out_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to current_user.name, '#', class: 'nav-link username' %>
+        </li>
       <% else %>
         <li class="nav-item">
             <%= link_to 'Sign In', new_session_path, class: "nav-link" %>
