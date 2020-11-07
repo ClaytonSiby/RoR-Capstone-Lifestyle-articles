@@ -25,8 +25,12 @@
       <% end %>
     </div>
 
-    <div class="container-fluid">
+    <main class="container-fluid">
       <%= yield %>
-    </div>
+    </main>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
