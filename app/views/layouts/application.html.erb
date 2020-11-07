@@ -10,6 +10,9 @@
   </head>
 
   <body>
+
+    <%= render 'layouts/nav' %>
+
     <div class="notifications">
       <% if notice.present? %>
         <div class="notice">
@@ -21,8 +24,6 @@
         </div>
       <% end %>
     </div>
-
-    <%= render 'layouts/nav' %>
 
     <div class="container-fluid">
       <%= yield %>
