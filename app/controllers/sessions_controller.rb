@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:notice] = 'You have logged in successfully!'
-      redirect_to @user
+      redirect_to homepage_index_path
     else
       flash[:alert] = 'Name not recognised!'
-      redirect_to root_path
+      redirect_to sign_up_path
     end
   end
 

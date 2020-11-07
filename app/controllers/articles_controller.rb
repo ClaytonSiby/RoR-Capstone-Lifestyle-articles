@@ -22,7 +22,8 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @user = User.find(session[:current_user])
+    @article = @user.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_article
     @article = Article.find(params[:id])
   end
