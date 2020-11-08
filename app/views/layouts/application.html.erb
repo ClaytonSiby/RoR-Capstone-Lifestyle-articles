@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | LSA </title>
+    <title><%= yield(:title) %> | SOFTECH </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/e2597287a1.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -30,7 +32,7 @@
       <%= yield %>
     </main>
 
-    <footer class="footer mt-auto py-3 container-fluid">
+    <footer class="footer mt-auto container-fluid">
       <%= render 'layouts/footer' %>
     </footer>
   </body>

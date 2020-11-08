@@ -50,7 +50,14 @@ body {
   bottom: 0;
   left: 0;
   display: block;
-  padding: 1rem;
-  background: #18181a;
+  background: #2cebd1;
   text-align: center;
+}
+
+.container-fluid {
+    .row {
+        .featured-article {
+            height: 60vh;
+        }
+    }
 }

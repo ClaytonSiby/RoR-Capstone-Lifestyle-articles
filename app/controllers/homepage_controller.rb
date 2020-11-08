@@ -1,5 +1,6 @@
 class HomepageController < ApplicationController
   def index
-    @articles = Article.all.order(:created_at)
+    @featured_article = Article.all
+    @categories = Category.all
   end
 end

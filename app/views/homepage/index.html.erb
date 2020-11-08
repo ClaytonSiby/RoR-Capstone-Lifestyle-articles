@@ -1,5 +1,29 @@
-<h1>Homepage</h1>
+<%= provide(:title, 'Home') %>
 
-<% @articles.each do |article| %>
-  <p><%= article.name %></p>
-<% end %>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-12 featured-article">
+      <%= featured_article.class %>
+    </div>
+
+    <div class="col-12 container-fluid">
+      <div class="row justify-content-center">
+        <% @categories.each do |category| %>
+          <div class="col-sm">
+            <section class="category">
+              <header class="category-header">
+                <h6><%= category.name %></h6>
+                <div class="underline"></div>
+              </header>
+              <div class="category-footer">
+                <p>article title here</p>
+              </div>
+            </section>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
