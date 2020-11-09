@@ -1,20 +1,35 @@
 <%= provide(:title, 'Category') %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
+  <p>
+    <strong>Priority:</strong>
+    <%= @category.priority %>
+  </p>
 
-<div>
-  <% @articles.each do |article| %>
-    <p><%= article.name %></p>
-  <% end %>
+  <div>
+    <h4> Articles Under this Category: </h4>
+    <% @articles.each_with_index do |article, index| %>
+      <div class="card">
+        <div class="card-header">
+          <p><%= article.title %></p>
+        </div>
+        <div class="card-body">
+          <img src="<%=(url_for(article.image))%>">
+        </div>
+        <div class="card-footer">
+          <button>
+            <%= up_or_downvote(article) %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
 </div>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
