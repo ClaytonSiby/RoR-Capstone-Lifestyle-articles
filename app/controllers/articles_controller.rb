@@ -26,8 +26,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        @article.categories << Category.find(article_params[:category_id])
-        format.html { redirect_to category_path(article_params[:category_id]), notice: 'Article was successfully created.' }
+        CategoriesArticle.create(category_id: article_params[:category_id], article_id: @article.id)
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -41,6 +41,9 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
+        category = CategoriesArticle.where(article_id: @article.id)
+        category[0].category_id = article_params[:category_id]
+        category[0].save
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else

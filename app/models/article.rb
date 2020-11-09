@@ -10,7 +10,7 @@ class Article < ApplicationRecord
   has_many :votes, class_name: 'Vote', foreign_key: 'article_id', dependent: :destroy
 
   def self.featured_article
-    article = Vote.group(:article_id).count.max_by { |a , b| b }.first
+    article = Vote.group(:article_id).count.max_by { |_a, b| b }.first
 
     Article.find(article)
   end
