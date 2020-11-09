@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, 'Category') %>
 
 <p>
   <strong>Name:</strong>
@@ -9,6 +9,12 @@
   <strong>Priority:</strong>
   <%= @category.priority %>
 </p>
+
+<div>
+  <% @articles.each do |article| %>
+    <p><%= article.name %></p>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

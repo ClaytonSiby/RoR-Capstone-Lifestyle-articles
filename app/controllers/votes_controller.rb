@@ -1,22 +1,35 @@
 class VotesController < ApplicationController
-  def create
-    @vote = current_user.votes.new(article_id: [params[:article_id]])
+  before_action :find_article
+  before_action :find_vote, only: [:destroy]
 
-    if @vote.save
-      redirect_to root_path, notice: 'You just voted for the article!'
+  def create
+    if !vote_exists?
+      @vote = current_user.votes.create(article_id: params[:article_id])
+      flash[:notice] = 'You voted for this article!'
     else
-      redirect_to root_path, alert: 'You cannot like this article'
+      flash[:alert] = 'An error kept you from voting for this article!'
     end
+    redirect_to @article
   end
 
   def destroy
-    vote = Vote.find_by(id: params[:id], user: current_user, article_id: params[:article_id])
-
-    if vote
-      vote.destroy
-      redirect_to root_path, notice: 'You disliked an article'
+    if vote_exists?
+      @vote.destroy
+      flash[:notice] = 'You downvoted this article!'
     else
-      redirect_to root_path, alert: 'You cannot dislike an article that you did not like before.'
+      flash[:alert] = 'You cannot downvote this article!'
     end
+  end
+
+  def find_article
+    @article = Article.find(params[:article_id])
+  end
+
+  def vote_exists?
+    Vote.where(user_id: current_user.id, article_id: params[:article_id]).exists?
+  end
+
+  def find_vote
+    @vote = @article.votes.find(params[:id])
   end
 end
