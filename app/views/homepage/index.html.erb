@@ -8,8 +8,9 @@
 
     <div class="col-12 container-fluid">
       <div class="row d-flex align-items-center justify-content-center">
-        <% @categories.each do |category| %>
-          <div class="col-sm d-flex align-items-center justify-content-center" style="background-image: url(<%= last_article_image(category) %>)">
+        <% @categories.includes(:articles).all.order(priority: 'DESC').each do |category| %>
+          <% image = last_article_image(category)%>
+          <div class="col-sm d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
             <section class="category">
               <header class="category-header">
                 <h6><%= category.name %></h6>

@@ -1,8 +1,10 @@
 class Article < ApplicationRecord
   validates :title, presence: true, length: { maximum: 40 }
   validates :text, presence: true
+  validates :image, presence: true
 
-  has_one_attached :image, dependent: :destroy
+  # has_one_attached :image, dependent: :destroy
+  mount_uploader :image, ImageUploader
   belongs_to :author, class_name: 'User'
 
   has_many :categories_articles

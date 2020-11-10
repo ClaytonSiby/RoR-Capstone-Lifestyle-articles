@@ -12,7 +12,7 @@
 
 <div class="single-article">
   <strong>Image:</strong>
-  <img src="<%=(url_for(@article.image))%>" />
+  <%=  cl_image_tag(@article.image) %>
 
   <button class='vote btn btn-sm btn-success'>
     <%= up_or_downvote(@article)  %>
