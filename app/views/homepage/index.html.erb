@@ -1,6 +1,6 @@
 <%= provide(:title, 'Home') %>
 
-<section class="container-fluid">
+<section class="">
   <div class="row">
     <div class="col-12 featured-article" style="background-image: url(<%= featured_image %>)">
       <%= featured_article_title %>
@@ -10,7 +10,7 @@
       <div class="row d-flex align-items-center justify-content-center">
         <% @categories.includes(:articles).all.order(priority: 'DESC').each do |category| %>
           <% image = last_article_image(category)%>
-          <div class="col-sm d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
+          <div class="col-sm categories d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
             <section class="category">
               <header class="category-header">
                 <h6><%= category.name %></h6>
@@ -26,5 +26,3 @@
     </div>
   </div>
 </section>
-
-

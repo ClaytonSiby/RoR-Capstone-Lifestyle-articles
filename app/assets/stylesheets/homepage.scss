@@ -57,7 +57,16 @@ body {
 .container-fluid {
   .row {
     .featured-article {
-      height: 60vh;
+      height: 80vh;
+    }
+
+    .categories {
+      height: 20rem;
+
+      .category {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }
