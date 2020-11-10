@@ -9,7 +9,7 @@ class Article < ApplicationRecord
   has_many :categories, through: :categories_articles, dependent: :destroy
   has_many :votes, class_name: 'Vote', foreign_key: 'article_id', dependent: :destroy
 
-  def self.featured_article
-    includes(:votes).all.max { |a, b| a.votes.count <=> b.votes.count }
+  def self.default_image
+    'https://res.cloudinary.com/lifestyle-articles/image/upload/v1604647869/sample.jpg'
   end
 end
