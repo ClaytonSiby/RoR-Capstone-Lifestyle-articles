@@ -29,11 +29,49 @@
     </div>
 
     <main class="container-fluid">
-      <%= yield %>
+      <div><%= yield %></div>
     </main>
 
-    <footer class="footer mt-auto container-fluid">
-      <%= render 'layouts/footer' %>
+    <footer class="footer p-0 m-0 container-fluid">
+      <div class="row align-items-center m-0">
+        <div class="col-sm main-logo mt-3">
+          <p>
+            <a href="<% root_path %>" class="text-light">
+              SOFTECH
+            </a>
+          </p>
+        </div>
+
+        <div class="col-sm main-logo mt-3">
+          <p>
+            <small class="policy">Privacy Policy <span class="text-light">|</span> Terms & Conditions</small>
+            <small> &copy; 2020 Softech. All rights reserved.</small>
+          </p>
+        </div>
+
+        <div class="col-sm social-links mt-3">
+          <p class="text-center">
+            Contact Us:
+            <span class="social-icon">
+              <a href="https://www.twitter/ClaytonSiby" target="_blank" class="icon">
+                <i class="fab fa-twitter"></i>
+              </a>           
+            </span>
+
+            <span class="social-icon">
+              <a href="https://www.facebook.com/clayton.siby.589/" target="_blank" class="icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>           
+            </span>
+
+            <span class="social-icon">
+              <a href="https://www.instagram/ClaytonSiby" target="_blank" class="icon">
+                <i class="fab fa-instagram"></i>
+              </a>           
+            </span>
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

@@ -2,21 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+$primary_bg: #3a3531;
+$primary_color: #fa663f;
+$underline_color: #fffe00;
+$dark: #000;
+
 html {
   height: 100%;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding: 0;
   min-height: 100%;
 }
 
@@ -45,28 +55,78 @@ body {
 }
 
 .footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  background: #2cebd1;
-  text-align: center;
-  justify-content: center;
+  background: $primary_bg;
+  color: #fff;
+
+  .social-icon {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    .icon {
+      color: $primary_color;
+    }
+  }
+
+  .policy {
+    color: $primary_color;
+  }
 }
 
 .container-fluid {
   .row {
     .featured-article {
-      height: 70vh;
+      height: 60vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .categories {
-      height: calc(100vh - (60vh + 10vh));
+      height: calc(100vh - (60vh + 5vh));
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
       .category {
         height: 100%;
         width: 100%;
+        position: relative;
+
+        .category-header {
+          padding-top: .5rem;
+
+          h6 {
+            font-weight: 900;
+            color: $primary_bg;
+          }
+
+          .underline {
+            width: 60px;
+            height: .2rem;
+            background: $underline_color;
+          }
+        }
+
+        .category-footer {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $dark;
+        opacity: .2;
+        z-index: -1000;
       }
     }
   }
