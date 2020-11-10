@@ -2,14 +2,15 @@
 
 <section class="container-fluid">
   <div class="row">
-    <div class="col-12 featured-article">
+    <div class="col-12 featured-article" style="background-image: url(<%= rails_blob_url(featured_article.image, only_path: true)%>)">
       <%= featured_article.title %>
     </div>
 
     <div class="col-12 container-fluid">
-      <div class="row justify-content-center">
+      <div class="row d-flex align-items-center justify-content-center">
         <% @categories.each do |category| %>
-          <div class="col-sm">
+          <div class="col-sm" 
+               style="background: url(<%= rails_blob_url(last_article_image(category), only_path: true) %>)">
             <section class="category">
               <header class="category-header">
                 <h6><%= category.name %></h6>
