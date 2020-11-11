@@ -18,8 +18,8 @@
             <%= link_to category.name, category, class: 'nav-link'%>
           </li>
         <% end %>
-        <li class="nav-item">
-            <%= link_to 'Create Article', new_article_path, class: "nav-link" %>
+        <li class="nav-item bg-global">
+            <%= link_to 'Post An Article', new_article_path, class: "nav-link text-light" %>
         </li>
         <li class="nav-item ml-5">
           <%= link_to current_user.name, '#', class: 'nav-link username' %>

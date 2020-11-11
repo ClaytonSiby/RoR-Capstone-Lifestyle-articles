@@ -2,13 +2,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <% @articles.each_with_index do |article, index| %>
+    <% @articles.includes(:votes).each_with_index do |article, index| %>
       <div class="col-6 row p-0 m-0 article">
         <div class="col-6 p-0 m-0 article-background" style="background-image: url(<%= article.image %>)"></div>
-        <div class="col-6 p-2">
+        <div class="col-6 px-3">
           <h5><%= article.title %></h5>
-          <div class="underline"></div>
-          <p><%= article.text %></p>
+          <div class="underline mb-3"></div>
+          <p class="text-italic"><%= article.text %></p>
+          <p class="article-athor">Authored by: <%= article.author.name %></p>
           <button>
             <%= up_or_downvote(article) %>
           </button>

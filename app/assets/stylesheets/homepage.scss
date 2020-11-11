@@ -49,8 +49,14 @@ body {
 }
 
 .username {
-  color: pink !important;
+  color: $primary_color !important;
   text-transform: uppercase;
+}
+
+.bg-global {
+  background-color: $primary_color;
+  border-radius: 10px;
+  color: #fff;
 }
 
 nav {
