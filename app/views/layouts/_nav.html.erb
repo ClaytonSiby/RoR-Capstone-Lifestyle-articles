@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md navbar-light border-bottom">
   <!-- Brand -->
-  <%= link_to 'SOFTECH', root_path, class: 'navbar-brand'%>
+  <a href="<%= root_path %>" class="navbar-brand">
+    <span class="primary"> SIB</span>LI<span class="primary">FE</span>
+  </a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenav">
@@ -32,10 +34,10 @@
           </li>
         <% end %>
         <li class="nav-item">
-            <%= link_to 'Sign In', new_session_path, class: "nav-link" %>
+            <%= link_to 'Sign In', new_session_path, class: "nav-link signin-btn text-info" %>
         </li>
         <li class="nav-item">
-            <%= link_to 'Sign Up', sign_up_path, class: "nav-link" %>
+            <%= link_to 'Sign Up', sign_up_path, class: "nav-link signup-btn text-info" %>
         </li>
       <% end %>
     </ul>

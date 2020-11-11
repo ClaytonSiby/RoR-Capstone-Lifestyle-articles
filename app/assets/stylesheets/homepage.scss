@@ -53,6 +53,19 @@ body {
   text-transform: uppercase;
 }
 
+nav {
+  .navbar-brand {
+    letter-spacing: 2px;
+    font-size: 1.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .primary {
+      font-weight: 900;
+      color: $primary_color;
+    }
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -60,6 +73,18 @@ body {
   right: 0;
   background: $primary_bg;
   color: #fff;
+  overflow: hidden;
+
+  .row {
+    .col-sm {
+      .main-logo {
+        .primary {
+          font-weight: 900;
+          color: $primary_color;
+        }
+      }
+    }
+  }
 
   .social-icon {
     text-align: center;
@@ -81,14 +106,27 @@ body {
 .container-fluid {
   .row {
     .featured-article {
+      position: relative;
       height: 60vh;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+
+      .featured-title-parent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+
+        .featured-article-title {
+          color: $primary_color;
+        }
+      }
     }
 
     .categories {
-      height: calc(100vh - (60vh + 5vh));
+      height: calc(100vh - 60vh);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -103,7 +141,7 @@ body {
 
           h6 {
             font-weight: 900;
-            color: $primary_bg;
+            color: #fff;
           }
 
           .underline {
@@ -115,9 +153,11 @@ body {
 
         .category-footer {
           position: absolute;
-          bottom: 0;
+          bottom: 3rem;
           left: 0;
           right: 0;
+          color: #fff;
+          font-weight: 600;
         }
       }
 
@@ -128,7 +168,7 @@ body {
         left: 0;
         right: 0;
         background: $dark;
-        opacity: 0.2;
+        opacity: 0.8;
         z-index: -1000;
       }
     }
