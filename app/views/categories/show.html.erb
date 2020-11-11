@@ -1,27 +1,14 @@
-<%= provide(:title, 'Category') %>
+<%= provide(:title, @category.name) %>
 
-<div class="container">
-  <p>
-    <strong>Name:</strong>
-    <%= @category.name %>
-  </p>
-
-  <p>
-    <strong>Priority:</strong>
-    <%= @category.priority %>
-  </p>
-
-  <div>
-    <h4> Articles Under this Category: </h4>
+<div class="container-fluid">
+  <div class="row">
     <% @articles.each_with_index do |article, index| %>
-      <div class="card">
-        <div class="card-header">
-          <p><%= article.title %></p>
-        </div>
-        <div class="card-body">
-          <%=  cl_image_tag(article.image) %>
-        </div>
-        <div class="card-footer">
+      <div class="col-6 row p-0 m-0 article">
+        <div class="col-6 p-0 m-0 article-background" style="background-image: url(<%= article.image %>)"></div>
+        <div class="col-6 p-2">
+          <h5><%= article.title %></h5>
+          <div class="underline"></div>
+          <p><%= article.text %></p>
           <button>
             <%= up_or_downvote(article) %>
           </button>
@@ -29,7 +16,4 @@
       </div>
     <% end %>
   </div>
-
-  <%= link_to 'Edit', edit_category_path(@category) %> |
-  <%= link_to 'Back', categories_path %>
 </div>
