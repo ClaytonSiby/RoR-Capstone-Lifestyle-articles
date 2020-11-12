@@ -1,0 +1,11 @@
+<%= provide(:title, 'Create Category') %>
+
+<div class="container mt-5">
+  <div class="form-center">
+    <h1>New Category</h1>
+
+    <%= render 'form', category: @category %>
+
+    <%= link_to 'Back', categories_path %>
+  </div>
+</div>

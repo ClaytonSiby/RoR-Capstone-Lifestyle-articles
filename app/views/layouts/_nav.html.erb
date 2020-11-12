@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-md navbar-light border-bottom">
+  <!-- Brand -->
+  <a href="<%= root_path %>" class="navbar-brand">
+    <span class="primary"> SIB</span>LI<span class="primary">FE</span>
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse justify-content-end" id="collapsenav">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <% Category.all.each do |category| %>
+          <li class="nav-item">
+            <%= link_to category.name, category, class: 'nav-link'%>
+          </li>
+        <% end %>
+        <li class="nav-item bg-global">
+            <%= link_to 'Post An Article', new_article_path, class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item ml-5">
+          <%= link_to current_user.name, '#', class: 'nav-link username' %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Sign Out', sign_out_path, class: "nav-link" %>
+        </li>
+      <% else %>
+        <% Category.all.each do |category| %>
+          <li class="nav-item">
+            <%= link_to category.name, category, class: 'nav-link'%>
+          </li>
+        <% end %>
+        <li class="nav-item">
+            <%= link_to 'Sign In', new_session_path, class: "nav-link signin-btn text-info" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Sign Up', sign_up_path, class: "nav-link signup-btn text-info" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -1,3 +1,25 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'homepage/index'
+
+  resources :sessions, only: %i[ destroy new create ]
+
+  resources :users, only: %i[new create show]
+
+  get 'sign_up', to: 'users#new', as: 'sign_up'
+
+  get 'sign_in', to: 'sessions#new', as: 'sign_in'
+
+  get 'sign_out', to: 'sessions#destroy', as: 'sign_out'
+
+  resources :categories, except: %i[ edit index create destroy ]
+
+  resources :articles, except: %i[ index ] do
+
+    resources :votes, only: %i[create destroy]
+
+  end
+
+  root 'homepage#index'
 end

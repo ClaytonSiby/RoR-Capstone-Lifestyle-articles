@@ -1,0 +1,28 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary_bg: #3a3531;
+$primary_color: #fa663f;
+$underline_color: #fffe00;
+$dark: #000;
+
+.container-fluid {
+  .row {
+    .article {
+      height: calc((100vh - 16.5vh) / 2);
+
+      .article-background {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .underline {
+        width: 60px;
+        height: 0.2rem;
+        background: $underline_color;
+      }
+    }
+  }
+}

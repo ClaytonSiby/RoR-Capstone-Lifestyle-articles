@@ -1,0 +1,34 @@
+<%= provide(:title, 'View Article') %>
+
+<div class="container mt-2">
+  <div class="card single-article">
+    <div class="card-body row">
+      <div class="col-6">
+        <h5 class="card-title"><%= @article.title %></h5>
+        <p class="underline"></p>
+        <div class="card-text">
+          <p class="text"><%= @article.text %></p>
+          <p class="votes-count">Votes: <i><%= @article.votes.count%></i></p>
+          <p class="author">Authored by: <strong><%= @article.author.name%></strong> </p>
+        </div>
+      </div>
+
+      <div class="col-6 article-image" style="background-image: url(<%= @article.image %>)"></div>
+    </div>
+
+    <div class="card-footer">
+      <button class='vote btn btn-sm btn-warning'>
+        <%= up_or_downvote(@article)  %>
+      </button>
+
+      <% if @article.author.id == current_user.id %>
+        <button class="btn btn-sm bg-global">
+          <%= link_to 'Edit', edit_article_path(@article) %>
+        </button>
+        <button class="btn btn-sm bg-global">
+          <%= link_to 'Back', category_path(@article) %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary_bg: #3a3531;
+$primary_color: #fa663f;
+$underline_color: #fffe00;
+$dark: #000;
+
+.article-form-center {
+  max-width: 40rem;
+  margin: auto;
+}
+
+.single-article {
+  height: calc(100vh - 30vh);
+
+  .underline {
+    background-color: $primary_color;
+    width: 6rem;
+    padding: 0.1rem 0;
+  }
+
+  .card-text {
+    .text {
+      font-style: italic;
+    }
+
+    .author {
+      text-transform: capitalize;
+    }
+  }
+
+  .article-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
