@@ -1,0 +1,9 @@
+example_id                                      | status | run_time        |
+----------------------------------------------- | ------ | --------------- |
+./spec/models/user_spec.rb[1:1:1]               | passed | 0.01369 seconds |
+./spec/models/user_spec.rb[1:1:2]               | passed | 0.02892 seconds |
+./spec/models/user_spec.rb[1:2:1]               | passed | 0.05315 seconds |
+./spec/models/user_spec.rb[1:2:2]               | passed | 0.05211 seconds |
+./spec/requests/homepage_request_spec.rb[1:1:1] | passed | 0.45934 seconds |
+./spec/requests/sessions_request_spec.rb[1:1:1] | passed | 0.04016 seconds |
+./spec/requests/sessions_request_spec.rb[1:2:1] | passed | 0.01559 seconds |
