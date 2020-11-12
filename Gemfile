@@ -7,7 +7,7 @@ gem 'pg'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
 
 gem 'puma', '~> 4.1'
 
