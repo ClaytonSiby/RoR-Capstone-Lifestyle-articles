@@ -22,7 +22,7 @@ To set up the project on your local machine, follow the instructions below. Plea
 
 ## Live Demo
 
-[Social Media App](/)
+[Siblife livedemo](/)
 
 ## Homepage ScreenShot
 ![screenshot](app/assets/images/siblife_project_screenshot.png)
