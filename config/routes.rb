@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :articles do
+  resources :articles, except: %i[ index ] do
 
     resources :votes, only: %i[create destroy]
 

@@ -8,10 +8,18 @@
         <div class="col-6 px-3">
           <h5><%= article.title %></h5>
           <div class="underline mb-3"></div>
-          <p class="text-italic"><%= article.text %></p>
-          <p class="article-athor">Authored by: <%= article.author.name %></p>
-          <button>
+          <p class="text-italic"><%= truncate( article.text, length: 50, omission: "...#{article.text[-5, 5]}") %></p>
+          <p class="votes">Votes: 
+            <strong>
+              <i><%= article.votes.count %></i>
+            </strong>
+          </p>
+          <p class="article-athor">Authored by: <strong><%= article.author.name %></strong></p>
+          <button class="btn btn-sm bg-global">
             <%= up_or_downvote(article) %>
+          </button>
+          <button class="btn btn-sm btn-warning">
+            <%= link_to 'Read More', article, class: 'text-light' %>
           </button>
         </div>
       </div>

@@ -9,7 +9,7 @@ class VotesController < ApplicationController
     else
       flash[:alert] = 'An error kept you from voting for this article!'
     end
-    redirect_to @article
+    redirect_to category_path(find_article)
   end
 
   def destroy
@@ -19,6 +19,7 @@ class VotesController < ApplicationController
     else
       flash[:alert] = 'You cannot downvote this article!'
     end
+    redirect_to category_path(find_article)
   end
 
   def find_article
