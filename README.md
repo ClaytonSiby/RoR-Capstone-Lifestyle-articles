@@ -18,9 +18,11 @@ To set up the project on your local machine, follow the instructions below. Plea
 - rails-rspec
 - rubocop
 - stylelint
+- cloudinary
+- carrierwave
 
 # Image storage:
-As for images, I configured my development, test, & production environment to use [cloudinary](https://cloudinary.com/). You can follow [this tutorial](https://hackernoon.com/image-storage-in-rails-apps-using-cloudinary-and-active-storage-9w2u3yli) written by [@brana](https://hackernoon.com/u/bruna) on how you can configure your environments to use cloudinary storage.
+As for images, I configured my development, test, & production environment to use [cloudinary](https://cloudinary.com/). You can follow [this tutorial](https://hackernoon.com/image-storage-in-rails-apps-using-cloudinary-and-active-storage-9w2u3yli) written by [@brana](https://hackernoon.com/u/bruna) on how you can configure your environments to use cloudinary storage for storing your images. It's free.
 
 
 ## Live Demo
