@@ -24,6 +24,9 @@ To set up the project on your local machine, follow the instructions below. Plea
 
 [Social Media App](/)
 
+## Homepage ScreenShot
+![screenshot](app/assets/images/siblife_project_screenshot.png)
+
 
 ## Getting Started
 
@@ -43,7 +46,7 @@ Install gems with:
 bundle install
 ```
 
-### Add Bootstrap-4 dependencies by running:
+### Add Bootstrap dependencies by running:
 
 ```
 yarn add bootsrap jquery popper.js'
@@ -83,8 +86,6 @@ Open `http://localhost:3000/` in your browser.
 ```
     bundle exec rspec spec/name_of_spec.rb
 ```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ## Author
 
