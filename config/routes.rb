@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'sign_out', to: 'sessions#destroy', as: 'sign_out'
 
-  resources :categories
+  resources :categories, except: %i[ edit index create destroy ]
 
   resources :articles, except: %i[ index ] do
 

@@ -17,11 +17,13 @@
           <div class="col-sm categories d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
             <section class="category">
               <header class="category-header">
-                <h6 class=""><%= link_to category.name, category, class: 'text-light' %></h6>
+                <h6 class=""><%= link_to category.name, category, class: 'text-warning' %></h6>
                 <div class="underline"></div>
               </header>
+              <%# include priority number %>
               <footer class="category-footer">
-                <p><%= last_article_title(category) %></p>
+                <small>Priority: <strong class="text-warning"><%= category.priority %></strong></small>
+                <p><%=truncate(category.articles.last.title, length: 30, omission: "...#{category.articles.last.title[-5, 5]}") %></p>
               </footer>
             </section>
             <div class="overlay"></div>

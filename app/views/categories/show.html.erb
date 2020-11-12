@@ -15,12 +15,14 @@
             </strong>
           </p>
           <p class="article-athor">Authored by: <strong><%= article.author.name %></strong></p>
-          <button class="btn btn-sm bg-global">
-            <%= up_or_downvote(article) %>
-          </button>
-          <button class="btn btn-sm btn-warning">
-            <%= link_to 'Read More', article, class: 'text-light' %>
-          </button>
+          <% if user_signed_in? %>
+            <button class="btn btn-sm bg-global">
+              <%= up_or_downvote(article) %>
+            </button>
+            <button class="btn btn-sm btn-warning">
+              <%= link_to 'Read More', article, class: 'text-light' %>
+            </button>
+          <% end %>
         </div>
       </div>
     <% end %>

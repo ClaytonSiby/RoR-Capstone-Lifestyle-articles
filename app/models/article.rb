@@ -3,7 +3,6 @@ class Article < ApplicationRecord
   validates :text, presence: true
   validates :image, presence: true
 
-  # has_one_attached :image, dependent: :destroy
   mount_uploader :image, ImageUploader
   belongs_to :author, class_name: 'User'
 
