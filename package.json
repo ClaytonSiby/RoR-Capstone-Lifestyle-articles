@@ -18,5 +18,24 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "3.17.x",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "description": "> This repo holds the ruby on rails capstone project inspired by microverse.org & [creativecommons](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version).",
+  "main": "babel.config.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonSiby/RoR-Capstone-Lifestyle-articles.git"
+  },
+  "author": "clayton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaytonSiby/RoR-Capstone-Lifestyle-articles/issues"
+  },
+  "homepage": "https://github.com/ClaytonSiby/RoR-Capstone-Lifestyle-articles#readme"
 }
