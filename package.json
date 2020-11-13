@@ -4,5 +4,10 @@
     "stylelint-config-standard": "20.0.x",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "3.17.x"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
