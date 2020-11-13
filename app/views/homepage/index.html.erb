@@ -23,7 +23,7 @@
               <%# include priority number %>
               <footer class="category-footer">
                 <small>Priority: <strong class="text-warning"><%= category.priority %></strong></small>
-               
+                <p><%=truncate(last_article_title(category), length: 30, omission: "...#{last_article_title(category)[-5, 5]}") %></p>
               </footer>
             </section>
             <div class="overlay"></div>

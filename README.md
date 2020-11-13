@@ -27,7 +27,7 @@ As for images, I configured my development, test, & production environment to us
 
 ## Live Demo
 
-[Siblife livedemo](/)
+[Siblife livedemo](https://siblife.herokuapp.com/)
 
 ## Homepage ScreenShot
 ![screenshot](app/assets/images/siblife.png)
