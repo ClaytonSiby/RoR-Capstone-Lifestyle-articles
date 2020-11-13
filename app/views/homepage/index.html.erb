@@ -7,6 +7,10 @@
         <h4 class="featured-article-title">
           <%= featured_article_title %>
         </h4>
+
+        <p>
+          Votes: <strong class="text-warning"><i><%= featured_article.votes.count %></i></strong>
+        </p>
       </div>
     </div>
 
@@ -22,8 +26,8 @@
               </header>
               <%# include priority number %>
               <footer class="category-footer">
-                <strong>Priority: <%= category.priority %></strong>
-                <p><% category.articles.last.title %></p>
+                <small>Priority: <strong class="text-warning"><%= category.priority %></strong></small>
+                <p><%=truncate(category.articles.last.title, length: 30, omission: "...#{category.articles.last.title[-5, 5]}") %></p>
               </footer>
             </section>
             <div class="overlay"></div>
