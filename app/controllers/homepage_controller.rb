@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.includes(:articles).all.order(priority: 'DESC')
   end
 end

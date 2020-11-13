@@ -15,7 +15,7 @@
 
     <div class="col-12 container-fluid">
       <div class="row d-flex align-items-center justify-content-center">
-        <% @categories.includes(:articles).all.order(priority: 'DESC').each do |category| %>
+        <% @categories.each do |category| %>
           <% image = last_article_image(category)%>
           <div class="col-sm categories d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
             <section class="category">
