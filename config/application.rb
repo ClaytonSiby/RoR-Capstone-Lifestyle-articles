@@ -35,5 +35,7 @@ module LifestyleArticles
     config.generators.system_tests = nil
 
     config.assets.initialize_on_precompile = false
+
+    config.require_master_key = true
   end
 end
