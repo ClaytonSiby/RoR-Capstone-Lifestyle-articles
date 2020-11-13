@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'SignIn', type: :feature do
-  before(:each) { User.create!(name: 'Clayton', email: 'clay@example.com', password: 122) }
+  before(:each) { User.create(name: 'Clayton', email: 'clay@example.com', password: 122) }
   scenario 'User signs in successfully' do
     visit new_session_path
     fill_in 'Name', with: 'Clayton'
