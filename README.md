@@ -30,7 +30,7 @@ As for images, I configured my development, test, & production environment to us
 [Siblife livedemo](/)
 
 ## Homepage ScreenShot
-![screenshot](app/assets/images/siblife_project_screenshot.png)
+![screenshot](app/assets/images/siblife.png)
 
 
 ## Getting Started
