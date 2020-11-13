@@ -35,10 +35,11 @@
 
 /public/packs
 /public/packs-test
-/node_modules
+
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
 
 # Ignore application configuration
 /config/application.yml
+node_modules
