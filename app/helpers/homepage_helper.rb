@@ -13,7 +13,7 @@ module HomepageHelper
     featured_article ? featured_article.title : 'No Featured Articles so far'
   end
 
-  def featured_article_id
-    featured_article.id
+  def featured_article_votes_count
+    featured_article.votes.count
   end
 end
