@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @articles = @category.articles
+    @articles = @category.articles.includes(:votes)
   end
 
   def new

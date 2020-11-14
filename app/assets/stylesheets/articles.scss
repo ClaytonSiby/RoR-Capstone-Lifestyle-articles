@@ -13,7 +13,7 @@ $dark: #000;
 }
 
 .single-article {
-  height: calc(100vh - 30vh);
+  min-height: calc(100vh - 30vh);
 
   .underline {
     background-color: $primary_color;

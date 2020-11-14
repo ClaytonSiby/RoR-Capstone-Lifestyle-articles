@@ -8,18 +8,10 @@ default: &default
 development:
   <<: *default
   database: lifestyle_articles_development
-  username: lifestyle_articles
-  password: lifestyle_12782
-  host: localhost
-  port: 5432
 
 test:
   <<: *default
   database: lifestyle_articles_test
-  host: localhost
-  port: 5432
-  username: lifestyle_articles
-  password: lifestyle_12782
 
 production:
   <<: *default

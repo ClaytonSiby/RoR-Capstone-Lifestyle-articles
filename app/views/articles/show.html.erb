@@ -8,8 +8,8 @@
         <p class="underline"></p>
         <div class="card-text">
           <p class="text"><%= @article.text %></p>
-          <p class="votes-count">Votes: <i><%= @article.votes.count%></i></p>
-          <p class="author">Authored by: <strong><%= @article.author.name%></strong> </p>
+          <p class="votes-count">Votes: <i><%= count_votes_for_article(@article) %></i></p>
+          <p class="author">Authored by: <strong><%= article_author_name(@article)%></strong> </p>
         </div>
       </div>
 

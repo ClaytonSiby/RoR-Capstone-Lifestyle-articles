@@ -18,4 +18,12 @@ module CategoriesHelper
   def last_article_id(category)
     last_article_in_category(category)&.id
   end
+
+  def count_votes_for_article(article)
+    article.votes.count
+  end
+
+  def author_name(article)
+    article.author.name
+  end
 end

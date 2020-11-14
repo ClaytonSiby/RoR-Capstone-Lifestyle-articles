@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <% @articles.includes(:votes).each_with_index do |article, index| %>
+    <% @articles.each_with_index do |article, index| %>
       <div class="col-6 row p-0 m-0 article mb-2">
         <div class="col-6 p-0 m-0 article-background" style="background-image: url(<%= article.image %>)"></div>
         <div class="col-6 px-3">
@@ -11,10 +11,10 @@
           <p class="text-italic"><%= truncate( article.text, length: 50, omission: "...#{article.text[-5, 5]}") %></p>
           <p class="votes">Votes: 
             <strong>
-              <i><%= article.votes.count %></i>
+              <i><%= count_votes_for_article(article) %></i>
             </strong>
           </p>
-          <p class="article-athor">Authored by: <strong><%= article.author.name %></strong></p>
+          <p class="article-athor">Authored by: <strong><%= author_name(article) %></strong></p>
           <% if user_signed_in? %>
             <button class="btn btn-sm bg-global">
               <%= up_or_downvote(article) %>
