@@ -49,6 +49,14 @@ Postgres: >=9.5
 
 ### Setup
 
+Clone the project & start work on your local environment by running:
+
+```
+git clone https://github.com/ClaytonSiby/RoR-Capstone-Lifestyle-articles.git
+```
+
+And change directory with `cd RoR-Capstone-Lifestyle-articles`
+
 Install gems with:
 
 ```
@@ -58,7 +66,7 @@ bundle install
 ### Add Bootstrap dependencies by running:
 
 ```
-yarn add bootsrap jquery popper.js'
+yarn add bootsrap jquery popper.js
 ```
 
 or
@@ -67,13 +75,14 @@ or
   yarn install
 ```
 
-Reconfigure database.yml file for your local environment (i.e configuring development & test databases) to use a local username & password of your choice & run:
+To setup database run:
 
 ```
-  rails db:drop db:create db:migrate
+  rails db:migrate
 ```
 
-### Usage
+### Usage:
+
 
 Start server with:
 
@@ -83,7 +92,7 @@ Start server with:
 
 Open `http://localhost:3000/` in your browser.
 
-### Run tests
+### Run tests:
 
 - for all files:
 ```
