@@ -17,5 +17,4 @@ production:
   <<: *default
   adapter: postgresql
   database: lifestyle_articles_production
-  username: lifestyle_articles
   password: <%= ENV['LIFESTYLE_ARTICLES_DATABASE_PASSWORD'] %>
