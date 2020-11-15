@@ -1,0 +1,182 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary_bg: #3a3531;
+$primary_color: #fa663f;
+$underline_color: #fffe00;
+$dark: #000;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.notice,
+.alert {
+  margin-bottom: 8px;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: dimgrey;
+  font-size: 14px;
+}
+
+.notice {
+  background-color: #d4f6c6;
+}
+
+.alert {
+  background-color: #f6cfc6;
+}
+
+.username {
+  color: $primary_color !important;
+  text-transform: uppercase;
+}
+
+.bg-global {
+  background-color: $primary_color;
+  border-radius: 10px;
+  color: #fff;
+}
+
+nav {
+  .navbar-brand {
+    letter-spacing: 2px;
+    font-size: 1.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .primary {
+      font-weight: 900;
+      color: $primary_color;
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $primary_bg;
+  color: #fff;
+  overflow: hidden;
+
+  .row {
+    .col-sm {
+      .main-logo {
+        .primary {
+          font-weight: 900;
+          color: $primary_color;
+        }
+      }
+    }
+  }
+
+  .social-icon {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    .icon {
+      color: $primary_color;
+    }
+  }
+
+  .policy {
+    color: $primary_color;
+  }
+}
+
+.container-fluid {
+  .row {
+    .featured-article {
+      position: relative;
+      height: 60vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .featured-title-parent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+
+        .featured-article-title {
+          color: $primary_color;
+        }
+      }
+    }
+
+    .categories {
+      height: calc(100vh - 60vh);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .category {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .category-header {
+          padding-top: 0.5rem;
+
+          h6 {
+            font-weight: 900;
+            color: #fff;
+          }
+
+          .underline {
+            width: 60px;
+            height: 0.2rem;
+            background: $primary_color;
+          }
+        }
+
+        .category-footer {
+          position: absolute;
+          bottom: 3rem;
+          left: 0;
+          right: 0;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $dark;
+        opacity: 0.8;
+        z-index: -1000;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<%= provide(:title, 'Home') %>
+
+<section class="">
+  <div class="row">
+    <div class="col-12 featured-article" style="background-image: url(<%= featured_image %>)">
+      <div class="featured-title-parent">
+        <h4 class="featured-article-title">
+          <%= featured_article_title %>
+        </h4>
+        <p>
+          Votes: <strong class="text-warning"><%= featured_article_votes_count %></strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-12 container-fluid">
+      <div class="row d-flex align-items-center justify-content-center">
+        <% @categories.each do |category| %>
+          <% image = last_article_image(category)%>
+          <div class="col-sm categories d-flex align-items-center justify-content-center" style="background-image: url(<%= image %>)">
+            <section class="category">
+              <header class="category-header">
+                <h6 class=""><%= link_to category.name, category, class: 'text-warning' %></h6>
+                <div class="underline"></div>
+              </header>
+              <%# include priority number %>
+              <footer class="category-footer">
+                <small>Priority: <strong class="text-warning"><%= category.priority %></strong></small>
+                <p><%=truncate(last_article_title(category), length: 30, omission: "...#{last_article_title(category)[-5, 5]}") %></p>
+              </footer>
+            </section>
+            <div class="overlay"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
