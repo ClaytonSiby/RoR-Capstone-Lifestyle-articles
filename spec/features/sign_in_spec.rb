@@ -8,4 +8,11 @@ RSpec.feature 'SignIn', type: :feature do
     click_button 'Sign In'
     expect(page).to have_text('You have logged in successfully!')
   end
+
+  scenario 'User cannot sign in with invalid name' do
+    visit new_session_path
+    fill_in 'Name', with: 'Tafadzwa'
+    click_button 'Sign In'
+    expect(page).to have_text('Name not recognised!')
+  end
 end
