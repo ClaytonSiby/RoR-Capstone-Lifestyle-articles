@@ -5,21 +5,21 @@ class VotesController < ApplicationController
   def create
     if !vote_exists?
       @vote = current_user.votes.create(article_id: params[:article_id])
-      flash[:notice] = 'You voted for this article!'
+      flash[:notice] = 'You voted for an article!'
     else
-      flash[:alert] = 'An error kept you from voting for this article!'
+      flash[:alert] = 'An error kept you from voting for the selected article!'
     end
-    redirect_to category_path(find_article)
+    redirect_to category_path(@article)
   end
 
   def destroy
     if vote_exists?
       @vote.destroy
-      flash[:notice] = 'You downvoted this article!'
+      flash[:notice] = 'You downvoted an article!'
     else
-      flash[:alert] = 'You cannot downvote this article!'
+      flash[:alert] = 'You cannot downvote the selected article!'
     end
-    redirect_to category_path(find_article)
+    redirect_to category_path(@article)
   end
 
   def find_article
