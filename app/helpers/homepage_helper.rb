@@ -14,6 +14,6 @@ module HomepageHelper
   end
 
   def featured_article_votes_count
-    featured_article.votes.count
+    # featured_article.votes.count
   end
 end
